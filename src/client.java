@@ -1,14 +1,14 @@
 public class client {
     
-    private int id;
+    private String id;
     private String name;
     
-    public client(int id, String name) {
+    public client(String id, String name) {
         this.id = id;
         this.name = name;
     }
     
-    public int getId() {
+    public String getId() {
         return id;
     }
     
