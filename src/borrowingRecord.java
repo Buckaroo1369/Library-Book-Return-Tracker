@@ -1,9 +1,7 @@
 
-
-
 public class borrowingRecord {
-    private Student student;
-    private Book book;
+    private student student;
+    private books books;
     private String borrowDate;
     private String dueDate;
     
@@ -11,9 +9,9 @@ public class borrowingRecord {
     private String condition;
     private String status;
     
-    public borrowingRecord(Student student, Book book, String borrowDate; String dueDate){
+    public borrowingRecord(student student, books books, String borrowDate, String returnDate, String dueDate){
          this.student = student;
-         this.book = book;
+         this.books = books;
          this.borrowDate = borrowDate;
          this.dueDate = dueDate;
          this.status = "Borrowed";
@@ -27,12 +25,12 @@ public class borrowingRecord {
         
     }
     
-    public Student getStudent(){
+    public student getStudent(){
         return student;
     }
     
-    public Book getBook(){
-        return book;
+    public books getBook(){
+        return books;
         
     }
     
@@ -40,7 +38,7 @@ public class borrowingRecord {
         return status;
     }
     
-    public String getReturnDate)(){
+    public String getReturnDate(){
         return returnDate;
     }
     
