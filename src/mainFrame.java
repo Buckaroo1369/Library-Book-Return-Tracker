@@ -40,6 +40,8 @@ public class mainFrame {
          
          setLayout(new BorderLayout(10, 10));
          
+         JLabel title = new Jlabel("LIBRARY BOOK RETURN TRACKER" , SwingConstant.CENTER
+         
          
          
          
