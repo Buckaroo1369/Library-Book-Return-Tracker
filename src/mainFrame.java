@@ -40,7 +40,21 @@ public class mainFrame {
          
          setLayout(new BorderLayout(10, 10));
          
-         JLabel title = new Jlabel("LIBRARY BOOK RETURN TRACKER" , SwingConstant.CENTER
+         JLabel title = new Jlabel("LIBRARY BOOK RETURN TRACKER" , SwingConstants.CENTER);
+         
+         title.setFont(new Font("Arial" , Font.BOLD, 20));
+         
+         add(title, BorderLayout.NORTH);
+         
+         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
+         
+         JPanel searchPanel = new JPanel(new FlowLayout()); 
+         
+         
+         
+         
+         
+         
          
          
          
