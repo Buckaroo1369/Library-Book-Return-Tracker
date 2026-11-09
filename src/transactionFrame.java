@@ -30,6 +30,16 @@ public class transactionFrame {
         private void initializeComponents(){
             setLayout(new BorderLayout(10,10));
             
-        JPanel topPanel = new JPanel(new)
+        JPanel topPanel = new JPanel(new BorderLayout(5, 5));
+        
+        JLabel lblTitle = new JLabel("Library Transactions");
+            lblTitle.setFont(new Font("Arial", Font.BOLD, 22));
+            
+            txtSearch = new JTextField();
+            
+            JButton btnSearch =  new JButton("Search");
+            JButton btnClear = new JButton("Clear");
+            
+            
     }
 }
