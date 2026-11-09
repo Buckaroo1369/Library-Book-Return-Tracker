@@ -3,7 +3,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class transactionFrame {
+public class transactionFrame extends JFrame{
     private Library library;
     
     private JTextField txtSearch;
@@ -39,6 +39,39 @@ public class transactionFrame {
             
             JButton btnSearch =  new JButton("Search");
             JButton btnClear = new JButton("Clear");
+            
+            JPanel searchButtons = new JPanel();
+            
+            searchButtons.add(btnSearch);
+            searchButtons.add(btnClear);
+            
+            searchPanel.add(searchButtons, BorderLayout.EAST);
+            
+            topPanel.add(lblTitle, BorderLayout.NORTH);
+            topPanel.add(lblTitle, BorderLayout.SOUTH);
+            
+            String[] columns = {
+                "Student ID",
+                "Student Name",
+                "Book Title",
+                "Condition",
+            };
+            
+            tableModel = new DefaultTableModel(columns, 0){
+                public boolean isCellEditable(int row, int column){
+                    return false;
+                }
+            };
+            
+            tblTransactions = new 
+                }
+            }
+            
+            
+            
+            
+            
+            
             
             
     }
