@@ -32,7 +32,7 @@ public class dashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         libraryScrollPane = new javax.swing.JScrollPane();
-        bookInfoAndStatus = new javax.swing.JTextPane();
+        tblTransactions = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         findBook = new javax.swing.JTextField();
@@ -67,7 +67,18 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        libraryScrollPane.setViewportView(bookInfoAndStatus);
+        tblTransactions.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Institute", "Book Title", "Status", "Condition"
+            }
+        ));
+        libraryScrollPane.setViewportView(tblTransactions);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setText("TRANSACTION RECORD");
@@ -181,7 +192,6 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane bookInfoAndStatus;
     private javax.swing.JButton borrowBookButton;
     private javax.swing.JTextField findBook;
     private javax.swing.JButton jButton1;
@@ -193,5 +203,6 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane libraryScrollPane;
     private javax.swing.JButton returnBookButton;
+    private javax.swing.JTable tblTransactions;
     // End of variables declaration//GEN-END:variables
 }
