@@ -86,7 +86,30 @@ public class transactionFrame extends JFrame{
             
             displayTransactions(library.getTransactions());
             
+            });
             
+            
+            bntBorrow.addActionListener(e -> JOptionPane.showMessageDialog(this, "Borrowing Frame will be added in the next stage."));
+            
+            bntReturn.addActionListener(e -> JOptionPane.showMessageDialog(this, "Returning Frame will be added in the next stage."));
+               
+            }
+            
+            private void displayTransactions(ArrayList<Transaction> records) {
+
+            tableModel.setRowCount(0);
+
+            for (transaction transaction : records) {
+
+            Object[] row = {
+                transaction.getStudent().getStudentId(),
+                transaction.getStudent().getName(),
+                transaction.getBookTitle(),
+                transaction.getStatus(),
+                transaction.getCondition()
+            };
+
+            tableModel.addRow(row);
             
             
             
