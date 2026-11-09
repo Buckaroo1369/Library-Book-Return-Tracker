@@ -73,6 +73,21 @@ public class transactionFrame extends JFrame{
             bottomPanel.add(btnBorrow);
             bottomPanel.add(btnReturn);
             
+            //add components
+            
+            add(topPanel, BorderLayout.NORTH);
+            add(scrollPane, BorderLayout.CENTER);
+            add(bottonPanel, BorderLayout.SOUTH);
+            
+            
+            btnSearch.addActionListener(e -> searchTransaction());
+            
+            btnClear.addActionListener(e -> {txtSearch.setText(""));
+            
+            displayTransactions(library.getTransactions());
+            
+            
+            
             
             
                 }
