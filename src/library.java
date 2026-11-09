@@ -54,6 +54,7 @@ public class library {
 
         private Node front;
         private Node rear;
+<<<<<<< HEAD
 
         public void add(T item) {
             Node newNode = new Node(item);
@@ -129,3 +130,13 @@ public class library {
         return records;
     }
 }
+=======
+        
+        public void 
+    
+    
+    
+    
+}
+}
+>>>>>>> b16d729e038b1eb73a0225e8727cb6de8c3cfc90
