@@ -1,12 +1,20 @@
 
-public class student extends client {
-    public student(String id, String name){
-        super(id, name);
-        
-    }
+public class student {
     
-    public String getDetails(){
-        return "Student: " +
-                super.getDetails();
+    
+     private String studentId;
+     private String name;
+     
+     public student(String studentId, String name){
+         this.studentId = studentId;
+         this.name = name;
+     }
+     
+     public String getStudentId(){
+         return studentId;
+     }
+     
+     public String getName(){
+         return name;
     }
 }

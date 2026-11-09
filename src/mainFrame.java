@@ -46,7 +46,8 @@ public class mainFrame {
          
          add(title, BorderLayout.NORTH);
          
-         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
+         JPanel mainPanel = new JPanel(new BorderLayout(10, 10)); 
+         
          
          JPanel searchPanel = new JPanel(new FlowLayout());
          
