@@ -63,7 +63,18 @@ public class transactionFrame extends JFrame{
                 }
             };
             
-            tblTransactions = new 
+            tblTransactions = new JTable(tableModel);
+            JScrollPane scrollPane = new JScrollPane(tblTransaction);
+            
+            JPanel bottonPanel = new JPanel();
+            JButton btnBorrow = new JButton("Borrowing");
+            JButton btnReturn = new JButton("Returning");
+            
+            bottomPanel.add(btnBorrow);
+            bottomPanel.add(btnReturn);
+            
+            
+            
                 }
             }
             
