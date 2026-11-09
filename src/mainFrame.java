@@ -48,7 +48,11 @@ public class mainFrame {
          
          JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
          
-         JPanel searchPanel = new JPanel(new FlowLayout()); 
+         JPanel searchPanel = new JPanel(new FlowLayout());
+         
+         
+         
+         
          
          
          
