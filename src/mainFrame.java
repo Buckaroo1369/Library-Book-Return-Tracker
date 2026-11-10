@@ -3,8 +3,72 @@ public class mainFrame extends javax.swing.JFrame {
     
     public mainFrame() {
         initComponents();
+        setupTableColors();
         refreshTable();
+        
     }
+    private void setupTableColors() {
+
+    transactionView.setDefaultRenderer(Object.class,
+        new javax.swing.table.DefaultTableCellRenderer() {
+
+        @Override
+        public java.awt.Component getTableCellRendererComponent(
+                javax.swing.JTable table, Object value,
+                boolean isSelected, boolean hasFocus,
+                int row, int column) {
+
+            super.getTableCellRendererComponent(
+                table, value, isSelected, hasFocus, row, column);
+
+            String text = value == null ? "" : value.toString();
+
+            // Default colors
+            setForeground(table.getForeground());
+            setBackground(table.getBackground());
+
+            // Return condition text colors (Column 5)
+            if (column == 5) {
+                switch (text.toLowerCase()) {
+                    case "excellent":
+                        setForeground(java.awt.Color.BLUE);
+                        break;
+
+                    case "good":
+                        setForeground(new java.awt.Color(0, 150, 0));
+                        break;
+
+                    case "slightly damaged":
+                        setForeground(new java.awt.Color(230, 130, 0));
+                        break;
+
+                    case "heavily damaged":
+                        setForeground(java.awt.Color.RED);
+                        break;
+                }
+            }
+
+            // Highlight matching search cells
+            String keyword = searchField.getText().trim().toLowerCase();
+
+            if (!keyword.isEmpty()
+                    && (column == 0 || column == 1 || column == 3)
+                    && text.toLowerCase().contains(keyword)) {
+
+                if (!isSelected) {
+                    setBackground(java.awt.Color.YELLOW);
+
+                    // Keep condition colors independent of highlighting
+                    if (column == 5) {
+                        setForeground(table.getForeground());
+                    }
+                }
+            }
+
+            return this;
+        }
+    });
+}
 
     
     @SuppressWarnings("unchecked")
