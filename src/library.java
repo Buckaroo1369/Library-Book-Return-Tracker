@@ -19,6 +19,37 @@ public class library {
 
         transactions.add(borrow);
         borrowedBooks.add(borrow);
+        
+    }
+    public boolean returnBook(String id, String bookTitle, String condition) {
+
+    Iterator<borrowTransaction> iterator = borrowedBooks.iterator();
+
+    while (iterator.hasNext()) {
+
+        borrowTransaction borrow = iterator.next();
+
+        if (borrow.getId().equalsIgnoreCase(id.trim()) &&
+            borrow.getBookTitle().equalsIgnoreCase(bookTitle.trim())) {
+
+            returnTransaction returned = new returnTransaction(
+                borrow.getName(),
+                borrow.getId(),
+                borrow.getInstitute(),
+                borrow.getBookTitle(),
+                condition
+            );
+
+            borrow.setStatus(returned.getStatus());
+            borrow.setCondition(returned.getCondition());
+
+            iterator.remove();
+
+            return true;
+        }
+    }
+
+    return false;
 }
 
 
