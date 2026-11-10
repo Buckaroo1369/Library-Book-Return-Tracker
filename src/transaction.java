@@ -41,7 +41,15 @@ public class transaction {
 
     public String getCondition() {
         return condition;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     
+
     }
 
 }
