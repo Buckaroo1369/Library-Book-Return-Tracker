@@ -16,6 +16,32 @@ public class transaction {
         this.bookTitle = bookTitle;
         this.status = status;
         this.condition = condition;
+        
+     }
+     
+     public String getName() {
+        return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getInstitute() {
+        return institute;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getCondition() {
+        return condition;
+    
     }
 
 }
