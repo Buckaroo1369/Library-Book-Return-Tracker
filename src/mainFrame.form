@@ -241,6 +241,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="BORROW"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="borrowBooksActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="returnBooks">
           <Properties>
@@ -255,6 +258,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="RETURN"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnBooksActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
