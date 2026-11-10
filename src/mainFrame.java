@@ -5,8 +5,8 @@ public class mainFrame extends javax.swing.JFrame {
         initComponents();
         setupTableColors();
         refreshTable();
-        
     }
+    
     private void setupTableColors() {
 
     transactionView.setDefaultRenderer(Object.class,
@@ -49,7 +49,7 @@ public class mainFrame extends javax.swing.JFrame {
             }
 
             // Highlight matching search cells
-            String keyword = searchField.getText().trim().toLowerCase();
+            String keyword = searchBar.getText().trim().toLowerCase();
 
             if (!keyword.isEmpty()
                     && (column == 0 || column == 1 || column == 3)
@@ -270,7 +270,7 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBarActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        refreshTable(searchField.getText());
+        refreshTable(searchBar.getText());
         transactionView.repaint();
     }//GEN-LAST:event_searchButtonActionPerformed
     private void refreshTable() {
