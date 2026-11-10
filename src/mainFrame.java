@@ -191,24 +191,54 @@ public class mainFrame extends javax.swing.JFrame {
         refreshTable();
     }//GEN-LAST:event_returnBooksActionPerformed
     private void refreshTable() {
+    refreshTable("");
+}
 
-        javax.swing.table.DefaultTableModel model =
-            (javax.swing.table.DefaultTableModel) transactionView.getModel();
+private void refreshTable(String keyword) {
+    javax.swing.table.DefaultTableModel model =
+        (javax.swing.table.DefaultTableModel) transactionView.getModel();
 
-        model.setRowCount(0);
+    model.setRowCount(0);
 
-        for (transaction t : library.getTransactions()) {
+    keyword = keyword.trim().toLowerCase();
 
-            model.addRow(new Object[]{
-                t.getId(),
-                t.getName(),
-                t.getInstitute(),
-                t.getBookTitle(),
-                t.getStatus(),
-                t.getCondition()
-            });
+    // Add matching transactions first
+    for (transaction t : library.getTransactions()) {
+        if (matches(t, keyword)) {
+            addTransactionRow(model, t);
         }
     }
+
+    // Add non-matching transactions afterward
+    for (transaction t : library.getTransactions()) {
+        if (!matches(t, keyword)) {
+            addTransactionRow(model, t);
+        }
+    }
+}
+
+private boolean matches(transaction t, String keyword) {
+    if (keyword.isEmpty()) {
+        return false;
+    }
+
+    return t.getId().toLowerCase().contains(keyword)
+        || t.getName().toLowerCase().contains(keyword)
+        || t.getBookTitle().toLowerCase().contains(keyword);
+}
+
+private void addTransactionRow(
+        javax.swing.table.DefaultTableModel model, transaction t) {
+
+    model.addRow(new Object[]{
+        t.getId(),
+        t.getName(),
+        t.getInstitute(),
+        t.getBookTitle(),
+        t.getStatus(),
+        t.getCondition()
+    });
+}
     
     public static void main(String args[]) {
        
