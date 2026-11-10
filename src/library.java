@@ -70,6 +70,9 @@ public class library {
 
         return results;
     }
+    public ArrayList<transaction> getTransactions() {
+        return new ArrayList<>(transactions);
+    }
 
 
 }
