@@ -134,6 +134,11 @@ public class mainFrame extends javax.swing.JFrame {
         transactionScrollPane.setViewportView(transactionView);
 
         searchBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchBar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Find transaction here");
@@ -147,6 +152,11 @@ public class mainFrame extends javax.swing.JFrame {
         searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("SEARCH");
         searchButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         borrowBooks.setBackground(new java.awt.Color(0, 0, 204));
         borrowBooks.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -254,6 +264,15 @@ public class mainFrame extends javax.swing.JFrame {
         
         refreshTable();
     }//GEN-LAST:event_returnBooksActionPerformed
+
+    private void searchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarActionPerformed
+        
+    }//GEN-LAST:event_searchBarActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        refreshTable(searchField.getText());
+        transactionView.repaint();
+    }//GEN-LAST:event_searchButtonActionPerformed
     private void refreshTable() {
     refreshTable("");
 }
