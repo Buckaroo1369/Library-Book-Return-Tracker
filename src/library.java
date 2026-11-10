@@ -25,32 +25,51 @@ public class library {
 
     Iterator<borrowTransaction> iterator = borrowedBooks.iterator();
 
-    while (iterator.hasNext()) {
+        while (iterator.hasNext()) {
 
-        borrowTransaction borrow = iterator.next();
+            borrowTransaction borrow = iterator.next();
 
-        if (borrow.getId().equalsIgnoreCase(id.trim()) &&
-            borrow.getBookTitle().equalsIgnoreCase(bookTitle.trim())) {
+            if (borrow.getId().equalsIgnoreCase(id.trim()) &&
+                borrow.getBookTitle().equalsIgnoreCase(bookTitle.trim())) {
 
-            returnTransaction returned = new returnTransaction(
-                borrow.getName(),
-                borrow.getId(),
-                borrow.getInstitute(),
-                borrow.getBookTitle(),
-                condition
-            );
+                returnTransaction returned = new returnTransaction(
+                    borrow.getName(),
+                    borrow.getId(),
+                    borrow.getInstitute(),
+                    borrow.getBookTitle(),
+                    condition
+                );
 
-            borrow.setStatus(returned.getStatus());
-            borrow.setCondition(returned.getCondition());
+                borrow.setStatus(returned.getStatus());
+                borrow.setCondition(returned.getCondition());
 
-            iterator.remove();
+                iterator.remove();
 
-            return true;
+                return true;
+            }
         }
-    }
 
-    return false;
-}
+        return false;
+    }
+    
+    public ArrayList<transaction> searchTransactions(String keyword) {
+
+        ArrayList<transaction> results = new ArrayList<>();
+
+        keyword = keyword.trim().toLowerCase();
+
+        for (transaction transaction : transactions) {
+
+            if (transaction.getId().toLowerCase().contains(keyword) ||
+                transaction.getName().toLowerCase().contains(keyword) ||
+                transaction.getBookTitle().toLowerCase().contains(keyword)) {
+
+                results.add(transaction);
+            }
+        }
+
+        return results;
+    }
 
 
 }
