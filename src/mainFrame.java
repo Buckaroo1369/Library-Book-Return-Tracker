@@ -66,6 +66,7 @@ public class mainFrame extends javax.swing.JFrame {
                 "ID", "Name", "Institute", "Book", "Status", "Condition"
             }
         ));
+        transactionView.setEnabled(false);
         transactionScrollPane.setViewportView(transactionView);
 
         searchBar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
